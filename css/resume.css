@@ -1,0 +1,150 @@
+/* Resume Page Styles */
+#resume-preview {
+    background-color: #1b1d36;
+    color: #d1d1d1;
+    padding: 60px 0;
+}
+
+.resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.resume-header h2 {
+    font-size: 2.5rem;
+    color: #D4AF37;
+}
+
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.resume-section h3 {
+    font-size: 1.8rem;
+    color: #D4AF37;
+    margin-bottom: 10px;
+}
+
+.resume-section ul {
+    list-style: none;
+    padding: 0;
+    font-size: 1.1rem;
+}
+
+.resume-section ul li {
+    margin: 5px 0;
+}
+
+.cta-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-footer h2 {
+    font-size: 2rem;
+    color: #D4AF37;
+}
+
+
+.resume-download {
+    text-align: center;
+    margin-top: 40px;
+    padding: 50px 0;
+    background-color: #1b1d36; /* Achtergrondkleur voor de container */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Schaduw voor een mooi effect */
+}
+
+/* Titel voor de downloadsectie */
+.resume-download h2 {
+    font-size: 2rem;
+    color: #D4AF37;
+    margin-bottom: 30px; /* Zorgt voor wat ruimte tussen de titel en knoppen */
+}
+
+/* Container voor de knoppen */
+.resume-download .download-buttons {
+    display: flex;
+    justify-content: center;  /* Centert de knoppen */
+    gap: 20px;                /* Zorgt voor ruimte tussen de knoppen */
+    flex-wrap: wrap;          /* Maakt de knoppen responsief (bij kleinere schermen komen ze onder elkaar) */
+}
+
+/* Styling voor de download links (de knoppen) */
+.resume-download a {
+    background-color: #D4AF37;
+    color: #fff;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Schaduw voor diepte */
+    position: relative;
+}
+
+/* Hover-effect voor de knoppen */
+.resume-download a:hover {
+    background-color: #f0c050;
+    transform: translateY(-3px); /* Lichte lift bij hover */
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6); /* Diepere schaduw bij hover */
+}
+
+/* Toevoegen van een lijn onder de knop bij hover */
+.resume-download a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #fff;  /* Lijnkleur is wit */
+    left: 50%;
+    bottom: -10px;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.resume-download a:hover::after {
+    width: 100%;  /* De lijn strekt zich uit naar de volledige breedte van de knop */
+}
+
+/* Glow-effect voor de knoppen */
+@keyframes headingGlow {
+    from {
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(212, 175, 55, 1);
+    }
+}
+
+
+
+.cta-footer button {
+    background-color: #D4AF37;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;  
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-footer button:hover {
+
+    background: #f0c050;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    animation: headingGlow 6s ease-in-out infinite alternate;
+    transition: all 0.3s ease;
+}

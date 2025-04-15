@@ -1,0 +1,185 @@
+body {
+    background: #1b1d36;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 40vh;
+    background: linear-gradient(45deg, #1b1d36 0%, #2c2e4a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #D4AF37;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Privacy Content */
+.privacy-content {
+    padding: 80px 0;
+    background: #1b1d36;
+    min-height: 60vh;
+}
+
+/* Content Section */
+.container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.container h1 {
+    font-size: 2.8rem;
+    color: #D4AF37;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+}
+
+.container strong {
+    display: block;
+    color: #D4AF37;
+    font-size: 1.5rem;
+    margin: 40px 0 20px;
+    position: relative;
+    padding: 15px 25px;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #D4AF37;
+}
+
+.container p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+    padding: 0 25px;
+    font-size: 1.05rem;
+}
+
+/* List Styling */
+.container p br {
+    margin-bottom: 12px;
+    display: block;
+}
+
+.container p br + span {
+    display: inline-block;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.container p br + span::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+    color: #D4AF37;
+    font-size: 1.2em;
+}
+
+/* Links */
+.container a {
+    color: #D4AF37;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+}
+
+.container a:hover {
+    color: #fff;
+    border-bottom-color: #fff;
+}
+
+/* Section Styling */
+.container > div {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight Important Sections */
+.container strong:nth-of-type(1),
+.container strong:nth-of-type(4),
+.container strong:nth-of-type(7) {
+    background: rgba(212, 175, 55, 0.08);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    .container {
+        margin: 40px auto;
+    }
+    
+    .container h1 {
+        font-size: 2.2rem;
+        margin-bottom: 40px;
+    }
+    
+    .container strong {
+        font-size: 1.3rem;
+        padding: 12px 20px;
+    }
+    
+    .container p {
+        padding: 0 15px;
+        font-size: 1rem;
+    }
+    
+    .container > div {
+        padding: 25px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .container {
+        color: #000;
+    }
+
+    .container strong {
+        color: #000;
+        border-left-color: #000;
+        background: none;
+    }
+
+    .container a {
+        color: #000;
+    }
+} 

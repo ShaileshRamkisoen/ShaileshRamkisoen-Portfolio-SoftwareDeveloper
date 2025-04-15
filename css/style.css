@@ -1,0 +1,411 @@
+/* Loader styling */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #0a0c1d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.loader-logo {
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.loader-logo img {
+    width: 150px;
+    height: auto;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 2px;
+    background: rgba(212, 175, 55, 0.2);
+    border-radius: 2px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.loading-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: #D4AF37;
+    animation: loading 7s linear forwards;
+}
+
+.loader-text {
+    color: #D4AF37;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeIn 0.5s ease 0.5s forwards;
+}
+
+/* Hide loader when done */
+.loader-wrapper.loaded {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .loader-logo img {
+        width: 120px;
+    }
+    
+    .loading-bar {
+        width: 160px;
+    }
+    
+    .loader-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .loader-logo img {
+        width: 100px;
+    }
+    
+    .loading-bar {
+        width: 140px;
+    }
+    
+    .loader-text {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.container h1 {
+    font-size: 36px;
+    color: #D4AF37;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.container h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #D4AF37;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project:hover img {
+    transform: scale(1.05);
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project:hover::before {
+    opacity: 1;
+}
+
+.project::after {
+    content: 'View Project';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(212, 175, 55, 0.9);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+}
+
+.project:hover::after {
+    opacity: 1;
+    bottom: 30px;
+}
+
+/* Hero section typewriter effect */
+/* Verwijder de typing animatie uit de CSS */
+.hero-content h1.typewriter {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #D4AF37;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 1px solid #D4AF37;
+    margin: 0 auto;
+    letter-spacing: 2px;
+    opacity: 1;
+    width: auto; /* Laat de breedte niet dynamisch aanpassen */
+}
+
+
+/* Typen animatie - maakt de tekst zichtbaar door de breedte te laten groeien */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%; /* Laat de volledige breedte van de tekst zichtbaar worden */
+    }
+}
+
+/* Knipperende cursor */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #D4AF37;
+    }
+}
+
+
+
+@-webkit-keyframes blink-caret {
+    from, to { 
+        border-color: transparent;
+    }
+    50% { 
+        border-color: #D4AF37;
+    }
+}
+
+/* Grotere schermen (Desktop XL) */
+@media (min-width: 1400px) {
+    .container {
+      max-width: 1320px;
+    }
+  
+    .projects {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+  
+    .hero-content h1.typewriter {
+      font-size: 4rem;
+      width: 900px;
+    }
+  }
+  
+  /* Grote schermen (Desktop) */
+  @media (min-width: 1200px) and (max-width: 1399px) {
+    .container {
+      max-width: 1140px;
+    }
+  
+    .projects {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+  
+    .hero-content h1.typewriter {
+      font-size: 3.5rem;
+      width: 800px;
+    }
+  }
+  
+  /* Medium schermen (Tablet landscape) */
+  @media (min-width: 993px) and (max-width: 1199px) {
+    .container {
+      max-width: 960px;
+    }
+  
+    .projects {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+  
+    .hero-content h1.typewriter {
+      font-size: 3rem;
+      width: 700px;
+    }
+  }
+  
+  /* Kleine schermen (Tablet portrait & kleinere laptops) */
+  @media (min-width: 577px) and (max-width: 992px) {
+    .container {
+      max-width: 720px;
+      padding: 15px;
+    }
+  
+    .projects {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .hero-content h1.typewriter {
+      font-size: 2.5rem;
+      width: 500px;
+    }
+  
+    .loader-logo img {
+      max-width: 120px;
+    }
+  
+    .loading-bar {
+      width: 160px;
+    }
+  
+    .loader-text {
+      font-size: 1rem;
+    }
+  }
+  
+  /* Extra kleine schermen (Mobiel) */
+  @media (max-width: 576px) {
+    .container {
+      max-width: 540px;
+      padding: 10px;
+    }
+  
+    .hero-content h1.typewriter {
+      font-size: 2rem;
+      width: 300px;
+    }
+  
+    .loader-logo img {
+      max-width: 100px;
+    }
+  
+    .loading-bar {
+      width: 140px;
+    }
+  
+    .loader-text {
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+    }
+  }
+  
+/* Just update the letterGlow animation */
+@keyframes letterGlow {
+    0% { 
+        color: #D4AF37;
+        text-shadow: 
+            0 0 2px #D4AF37,
+            0 0 4px #D4AF37,
+            0 0 6px #D4AF37;
+    }
+    100% { 
+        color: #D4AF37;
+        text-shadow: 
+            0 0 8px #D4AF37,
+            0 0 16px #D4AF37,
+            0 0 24px #D4AF37,
+    }
+}
+
+/* Make sure the spans have the animation */
+.hero-content h1.typewriter span {
+    display: inline-block;
+    animation: letterGlow 4s ease-in-out infinite alternate;
+}
+
+/* Initial state for main content */
+main {
+    opacity: 0;
+}
+
+/* Class added to body after loading */
+body.content-loaded main {
+    opacity: 1;
+}
+
+/* Ensure smooth transitions */
+main {
+    transition: opacity 0.5s ease-in;
+}
+
+/* When content is loaded, allow animations */
+body.content-loaded .hero-content h1.typewriter {
+    animation: typing 2.8s steps(60, end) forwards,
+              blink-caret 0.75s step-end infinite !important;
+}

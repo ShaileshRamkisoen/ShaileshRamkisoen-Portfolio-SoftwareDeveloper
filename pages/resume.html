@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/resume.css">
+    <link rel="icon" type="image/x-icon" href="../images/logos/Shailesh.Ramkisoen_KleinLogo.png">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../images/logos/ShaileshRamkisoen-Logo.png" alt="Shailesh Ramkisoen Logo" />
+            </a>
+        </div>
+        <nav class="menu">
+            <a href="../index.html">Home</a>
+            <a href="./aboutMe.html">About</a>
+            <a href="./projects.html">Projects</a>
+            <a href="./resume.html" class="active">Resume</a>
+            <a href="./contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Resume</h1>
+            <p>Software Developer | Full Stack Developer | Web Enthusiast</p>
+        </div>
+    </section>
+
+    <section id="resume-preview">
+        <div class="resume-container">
+            <div class="resume-header">
+                <h2>Shailesh Ramkisoen</h2>
+                <p>Full Stack Web Developer</p>
+            </div>
+
+            <div class="resume-section">
+                <h3>Education</h3>
+                <ul>
+                    <li><strong>Software Development</strong> - Grafisch Lyceum Rotterdam (2022 - Present)</li>
+                </ul>
+            </div>
+
+            <div class="resume-section">
+                <h3>Skills</h3>
+                <ul>
+                    <li><strong>Frontend:</strong> HTML5, CSS3, Wordpress, JavaScript, TypeScript, P5.js</li>
+                    <li><strong>Backend:</strong> PHP, Node.js</li>
+                    <li><strong>Databases:</strong> MySQL, PMA</li>
+                    <li><strong>Frameworks:</strong> Laravel, Bootstrap, Tailwind CSS, Electron</li>
+                    <li><strong>Tools:</strong> GitHub, Ubuntu, VMware</li>
+                    <li><strong>Operating Systems:</strong> Mac, Windows</li>
+                    <li><strong>Productivity Tools:</strong> Microsoft Word, Microsoft Excel, Microsoft PowerPoint,
+                        Trello</li>
+                </ul>
+
+
+                <!-- 
+            <div class="resume-section">
+                <h3>Experience</h3>
+                <ul>
+                    <li><strong>Internship - Web Development</strong> (2024 - Present) - Company XYZ</li>
+                    <li><strong>Freelance Developer</strong> (2022 - 2023) - Developed multiple web applications for clients.</li>
+                </ul>
+            </div> -->
+                <script>
+                    function downloadResume(filePath) {
+                        const link = document.createElement('a');
+                        link.href = filePath;
+                        link.download = filePath.split('/').pop(); 
+                        link.click();
+                    }
+                </script>
+                <p class="resume-download">
+                    <a href="../images/cv/ShaileshRamkisoen-CV-English.pdf"
+                        download="ShaileshRamkisoen-CV-English.pdf" class="cv-download-button">Download (English)</a>
+                </p>
+                <p class="resume-download">
+                    <a href="../images/cv/ShaileshRamkisoen-CV-Nederlands.pdf"
+                        download="ShaileshRamkisoen-CV-Nederlands.pdf" class="cv-download-button">Download (Nederlands)</a>
+                </p>
+            </div> 
+        </div>
+    </section>
+
+    <section class="cta-footer">
+        <h2>Want to Collaborate?</h2>
+        <a href="./contact.html">Get in Touch</a>
+    </section>
+
+    <footer>
+        <div class="footer-icon">
+            <a href="https://www.instagram.com/shailesh_ramkisoen/" target="_blank">
+                <img src="../images/icons/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://linkedin.com/in/shaileshramkisoen" target="_blank">
+                <img src="../images/icons/linkedin.png" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/ShaileshRamkisoen" target="_blank">
+                <img src="../images/icons/github.png" alt="GitHub">
+            </a>
+        </div>
+    </footer>
+</body>
+
+</html>

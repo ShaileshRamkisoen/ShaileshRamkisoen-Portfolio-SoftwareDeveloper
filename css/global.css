@@ -1,0 +1,457 @@
+.hamburger {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1101;
+  gap: 5px;
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #D4AF37; /* Goud */
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.hamburger.active .line {
+  background-color: #ff6f61; /* Kleur wanneer menu actief is */
+}
+
+
+/* Hero Decor */
+  .hero-decor {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1000px;
+    height: 1000px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: rotateEffect 30s linear infinite;
+    z-index: -1; /* Achtergrond achter de knop */
+}
+
+  
+  @keyframes rotateEffect {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  
+  @keyframes rotateEffect {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+/* Scrollbar breedte */
+::-webkit-scrollbar {
+  width: 10px; /* Voor verticale scrollbar */
+  height: 10px; /* Voor horizontale scrollbar */
+}
+
+/* Scrollbar achtergrond (track) */
+::-webkit-scrollbar-track {
+  background: #191e48; /* Donkere achtergrond */
+  border-radius: 10px;
+}
+
+/* Scrollbar duim (thumb) */
+::-webkit-scrollbar-thumb {
+  background: #191e48; /* Gouden kleur */
+  border-radius: 10px;
+}
+
+/* Scrollbar duim hover-effect */
+::-webkit-scrollbar-thumb:hover {
+  background: #35409c; /* Rode tint bij hover */
+}
+
+/* General Reset */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #0a0c1d;
+  color: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Box-sizing Reset */
+* {
+  box-sizing: border-box;
+}
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #1b1d36, #0a0c1d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: transparent;
+  background: linear-gradient(90deg, #D4AF37, #ff6f61);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textGlow 3s ease-in-out infinite alternate, fadeIn 1.5s ease-in-out forwards;
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 20px;
+  font-style: italic;
+  animation-delay: 1.5s;
+}
+
+.hero-content .cta a {
+  display: inline-block;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #D4AF37;
+  color: #D4AF37;
+  font-weight: 600;
+  border-radius: 50px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease-in-out forwards;
+  animation-delay: 0.5s;
+  transition: all 0.4s ease;
+  text-decoration: none;
+}
+
+.hero-content .cta a:hover {
+  background: #D4AF37;
+  color: #fff;
+  box-shadow: 0px 10px 30px rgba(255, 111, 97, 0.4);
+}
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textGlow {
+  0% { text-shadow: 0px 0px 10px #D4AF37, 0px 0px 20px #D4AF37; }
+  100% { text-shadow: 0px 0px 20px #D4AF37, 0px 0px 30px #D4AF37, 0px 0px 40px #D4AF37; }
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(15px);
+  background: rgba(10, 12, 29, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 1s ease-in-out;
+}
+
+/* CSS voor actieve link */
+.navbar .menu a.active {
+  color: #ffffff; /* Geef het een andere kleur voor actieve links */
+}
+
+.logo img {
+  max-width: 180px;
+  height: auto;
+  margin-right: 10px;
+  filter: drop-shadow(0 4px 6px rgba(212, 175, 55, 0.5));
+}
+
+.navbar .menu {
+  text-align: right;
+  margin-left: auto;
+  display: flex;
+  gap: 150px;
+}
+
+.navbar .menu a {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgba(212, 175, 55, 0.9);
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.navbar .menu a:hover {
+  color: #fff;
+  text-shadow: 0 4px 15px rgba(255, 157, 138, 0.6);
+}
+
+.navbar .menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #D4AF37;
+  left: 50%;
+  bottom: -5px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar .menu a:hover::after {
+  width: 100%;
+}
+
+  h2 {
+  text-align: center;
+  font-size: 36px;
+  color: #D4AF37;
+  animation: headingGlow 6s ease-in-out infinite alternate;
+}
+
+@keyframes headingGlow {
+  0% { 
+    text-shadow: 
+      0 0 4px #D4AF37,
+      0 0 8px #D4AF37,
+  }
+  100% { 
+    text-shadow: 
+      0 0 8px #D4AF37,
+      0 0 16px #D4AF37,
+      0 0 24px #D4AF37,
+  }
+}
+
+
+/* Stijl voor de footer-icon container */
+.footer-icon {
+  display: flex;
+  gap: 20px;
+}
+
+/* Basisstijl voor de footer-iconen */
+.footer-icon a img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Vergroot de iconen bij hover */
+.footer-icon a:hover img {
+  transform: scale(1.2);
+}
+
+footer, .cta-footer {
+  background: rgba(10, 12, 29, 0.7); /* Zelfde kleur als navbar */
+  color: rgba(212, 175, 55, 0.9); /* Gouden kleur voor tekst */
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+}
+
+/* Footer Stijlen */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.footer-icon {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-icon a img {
+  width: 40px;
+  height: auto;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 6px rgba(212, 175, 55, 0.5));
+}
+
+.footer-icon a:hover img {
+  transform: scale(1.2);
+}
+
+/* Call to Action Footer */
+.cta-footer {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.cta-footer h2 {
+  margin-bottom: 1rem;
+  color: #D4AF37;
+  text-shadow: 0 4px 15px rgba(212, 175, 55, 0.6);
+}
+
+.cta-footer a {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1.2rem;
+  color: white;
+  background: #D4AF37;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cta-footer a:hover {
+  background: #f0c050;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+footer .social-icons {
+  margin-top: 10px;
+}
+
+footer .social-icons a {
+  color: white;
+  margin: 0 15px;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+  color: #D4AF37;
+}
+
+/* Media Queries */
+
+/* Algemene styling */
+.hamburger {
+  display: none;
+}
+
+/* Actieve staat - kruisje */
+.hamburger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobiele weergave */
+@media (max-width: 1228px) {
+
+  /* Hamburger menu */
+  .hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 35px;
+      height: 30px;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1101;
+  }
+
+  /* Menu container */
+  .menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 280px;
+      height: 100vh;
+      background-color: rgba(10, 12, 29, 0.95);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px; /* Minder gap */
+      padding: 20px;
+      z-index: 1100;
+      transition: right 0.4s ease;
+  }
+
+  /* Actieve menu toestand */
+  .menu.active {
+      right: 0;
+  }
+
+  /* Menu items */
+  .menu a {
+      color: #D4AF37;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transform: translateX(100%);
+      opacity: 0;
+      transition: transform 0.4s ease, opacity 0.4s ease;
+  }
+
+  /* Actieve menu items met vertraging */
+  .menu.active a {
+      transform: translateX(0);
+      opacity: 1;
+  }
+
+  .menu.active a:nth-child(1) { transition-delay: 0.1s; }
+  .menu.active a:nth-child(2) { transition-delay: 0.2s; }
+  .menu.active a:nth-child(3) { transition-delay: 0.3s; }
+  .menu.active a:nth-child(4) { transition-delay: 0.4s; }
+}
+
+/* Kleinere schermen */
+@media (max-width: 576px) {
+  .hamburger {
+      top: 15px;
+      right: 15px;
+  }
+
+  .menu a {
+      font-size: 1.2rem;
+  }
+}
